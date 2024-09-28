@@ -236,7 +236,7 @@ void main_Create()
 
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) // create the main Winamp window
 {
-	int sc = config_minimized; // config_minimized gets trashed in WM_CREATE
+	int scc = config_minimized; // config_minimized gets trashed in WM_CREATE
 	deferring_show = 1;
 
 	main_Create();
@@ -263,18 +263,18 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) // create the main Winamp w
 	if (config_eq_open)
 	{
 		config_eq_open = 0;
-		eq_dialog(hMainWindow,sc);
+		eq_dialog(hMainWindow,scc);
 	}
 	//	MessageBox(NULL,"p4","0",0);
 	if (config_pe_open)
 	{
 		config_pe_open = 0;
-		pleditDlg(hMainWindow,sc);
+		pleditDlg(hMainWindow,scc);
 	}
 	if (config_video_open)
 	{
 		config_video_open = 0;
-		ShowVideoWindow(sc);
+		ShowVideoWindow(scc);
 	}
 	//	MessageBox(NULL,"p5","0",0);
 	if (!config_mw_open)
@@ -294,7 +294,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow) // create the main Winamp w
 	if (config_si_open)
 		OpenBrowser();
 */
-	if (sc)
+	if (scc)
 		g_showcode = SW_SHOWMINIMIZED;
 	else if (nCmdShow == SW_SHOWMAXIMIZED || nCmdShow == SW_MAXIMIZE)
 		g_showcode = SW_SHOWNORMAL;
